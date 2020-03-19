@@ -5,18 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Week_3_code_along
+namespace InheritanceIntro
 {
-    class Dog
+    public class Animal
     {
-        public string Breed;
         public int Height;
         public string Name;
-
-        public void Bark()
-        {
-            MessageBox.Show("Bark");
-        }
 
         public void SayName()
         {
