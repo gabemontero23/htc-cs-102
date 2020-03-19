@@ -53,6 +53,12 @@ namespace InheritanceIntro
             Duck duck = new Duck(28, "Daffy");
             duck.SayName();
 
+            Frog frog = new Frog(24, "Froakie", false);
+            frog.SayName();
+
+            Cat cat = new Cat(34, "Mittens", true);
+            cat.SayName();
+
         }
 
 
@@ -60,6 +66,18 @@ namespace InheritanceIntro
         {
             Duck duck = new Duck();
             duck.Quack();
+        }
+
+        private void Ribbit_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frog frog = new Frog();
+            frog.Ribbit();
+        }
+
+        private void Meow_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Cat cat = new Cat();
+            cat.Meow();
         }
     }
 }
