@@ -25,7 +25,11 @@
         <Border BorderThickness="1" BorderBrush="Gray" Padding="8">
             <StackPanel>
                 <!-- Put Animated Movie options in here -->
-                
+                <TextBlock>Animated Movie</TextBlock>
+                <TextBox Name="AnimatedMovie" Margin="0,0,0,15"></TextBox>
+                <TextBlock>Animation Type</TextBlock>
+                <TextBox Name="AnimationType" Margin="0,0,0,15"></TextBox>
+                <Button Click="AddAnimatedMovieButton_Click" HorizontalAlignment="Center" Margin="0,0,0,10">Add Animated Movie</Button>
             </StackPanel>
         </Border>
     </StackPanel>

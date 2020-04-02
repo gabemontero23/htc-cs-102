@@ -21,19 +21,26 @@ namespace MovieList
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ObservableCollection<Movie> MovieList;
+        private ObservableCollection<AnimatedMovie> MovieList;
+
+        public object AnimatedType
+        {
+            get;
+            set;
+        }
+
 
         public MainWindow()
         {
             InitializeComponent();
 
-            MovieList = new ObservableCollection<Movie>();
+            MovieList = new ObservableCollection<AnimatedMovie>();
             lvMovies.ItemsSource = MovieList;
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            Movie movieToAdd = new Movie(titleInput.Text, int.Parse(releaseYearInput.Text));
+            AnimatedMovie movieToAdd = new AnimatedMovie(titleInput.Text, int.Parse(releaseYearInput.Text));
 
             MovieList.Add(movieToAdd);
 
@@ -43,7 +50,7 @@ namespace MovieList
 
         private void ShowButton_Click(object sender, RoutedEventArgs e)
         {
-            foreach (Movie m in MovieList)
+            foreach (AnimatedMovie m in MovieList)
             {
                 m.ShowDetails();
             }
@@ -51,11 +58,17 @@ namespace MovieList
 
         private void lvMovies_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Movie selectedMovie = lvMovies.SelectedItem as Movie;
+            AnimatedMovie selectedMovie = lvMovies.SelectedItem as AnimatedMovie;
             if (selectedMovie != null)
             {
                 selectedMovie.ShowDetails();
             }
+        }
+
+        private void AddAnimatedMovieButton_Click(object sender, RoutedEventArgs e)
+        {
+            var AnimatedMovie = textBox1
+            
         }
     }
 }

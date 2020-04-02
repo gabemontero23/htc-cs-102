@@ -2,7 +2,7 @@
 
 namespace MovieList
 {
-    public class Movie
+    public class AnimatedMovie
     {
         public string Title
         {
@@ -16,16 +16,16 @@ namespace MovieList
             set;
         }
 
-        public void ShowDetails()
+        public virtual void ShowDetails()
         {
             string infoString = "Title: " + this.Title;
             infoString += "\nRelease Year: " + this.ReleaseYear;
             MessageBox.Show(infoString);
         }
 
-        public Movie() { }
+        public AnimatedMovie() { }
 
-        public Movie(string myTitle, int myReleaseYear)
+        public AnimatedMovie(string myTitle, int myReleaseYear)
         {
             this.Title = myTitle;
             this.ReleaseYear = myReleaseYear;
