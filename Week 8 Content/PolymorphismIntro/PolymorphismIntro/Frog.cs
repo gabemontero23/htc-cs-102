@@ -11,11 +11,11 @@ namespace PolymorphismIntro
     {
         public bool IsPoisonous;
 
-        public void Ribbit()
+
+        public override void Speak()
         {
             MessageBox.Show("Ribbit");
         }
-
         public Frog() { }
 
         public Frog(int height, string name, bool isPoisonous)
