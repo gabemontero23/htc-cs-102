@@ -17,15 +17,18 @@ namespace Final_Project
 
         public override void Speak()
         {
-            MessageBox.Show("Hee-hee");
+            MessageBox.Show("Hee-hee!");
         }
 
         public Pop() { }
 
-        public Pop(string lyrics, string name)
+        public Pop(string lyrics, string name, string type, string composed_by, int year_released)
         {
             this.Lyrics = lyrics;
             this.Name = name;
+            this.Type = type;
+            this.Composed_by = composed_by;
+            this.Year_Released = year_released;
         }
     }
 }

@@ -9,6 +9,7 @@ namespace Final_Project
 {
     public class Music
     {
+
         public string Lyrics
         {
             get;
@@ -20,6 +21,19 @@ namespace Final_Project
             get;
             set;
         }
+        
+        public string Composed_by
+        {
+            get;
+            set;
+        }
+
+        public int Year_Released
+        {
+            get;
+            set;
+        }
+
 
         public void SayLyrics()
         {

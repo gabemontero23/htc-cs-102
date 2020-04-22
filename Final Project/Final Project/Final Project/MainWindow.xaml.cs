@@ -20,39 +20,49 @@ namespace Final_Project
 
     public partial class MainWindow : Window
     {
-        public ObservableCollection <Music> Music;
+        public ObservableCollection <Music> MusicList;
 
         public MainWindow()
         {
             InitializeComponent();
-            Music = new ObservableCollection<Music>();
+            MusicList = new ObservableCollection<Music>();
 
             // Define some songs
-            Country country = new Country("Country roads, take me home, To the place, I belong, West Virginia, mountain mama, Take me home, country roads", "Country Roads");
-            Pop pop = new Pop("Huh, because I'm happy, Clap along if you feel like a room without a roof, Because I'm happy, Clap along if you feel like happiness is the truth", "Happy");
-
+            Country country = new Country("Country roads, take me home, To the place, I belong, West Virginia, mountain mama, Take me home, country roads", "Country Roads", "Country", "John Denver", 1971);
+            Pop pop = new Pop("Huh, because I'm happy, Clap along if you feel like a room without a roof, Because I'm happy, Clap along if you feel like happiness is the truth", "Happy", "Pop", "Pharrell Williams", 2013);
+            Rock rock = new Rock("Is this the real life? Is this just fantasy ? Caught in a landslide, No escape from reality.", "Bohemian Rhapsody", "Rock", "Queen", 1975);
+            Rap rap = new Rap("His palms are sweaty, knees weak, arms are heavy, There's vomit on his sweater already, mom's spaghetti, He's nervous, but on the surface he looks calm and ready", "Lose Yourself", "Rap", "Eminem", 2002);
+            Disco disco = new Disco("Hey hey hey Ba de ya, say do you remember Ba de ya, dancing in September Ba de ya, never was a cloudy day","September", "Disco", "Earth, Wind & Fire", 1978);
             // Add the songs to the list
-            Music.Add(country);
+            MusicList.Add(country);
+            MusicList.Add(pop);
+            MusicList.Add(rock);
+            MusicList.Add(rap);
+            MusicList.Add(disco);
 
-
-            lvSongs.ItemsSource = Songs;
+            lvSongs.ItemsSource = MusicList;
         }
 
-        private void lvAnimals_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void lvSongs_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Animal selectedAnimal = lvAnimals.SelectedItem as Animal;
-            if (selectedAnimal != null)
+            Music selectedSong = lvSongs.SelectedItem as Music;
+            if (selectedSong != null)
             {
-                selectedAnimal.Speak();
+                selectedSong.Speak();
             }
         }
 
         private void SayLyrics_Button_Click(object sender, RoutedEventArgs e)
         {
-            foreach (Song a in Songs)
+            foreach (Music m in MusicList)
             {
-                a.SayName();
+                m.SayLyrics();
             }
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

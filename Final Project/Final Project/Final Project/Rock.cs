@@ -22,10 +22,13 @@ namespace Final_Project
 
         public Rock() { }
 
-        public Rock(string lyrics, string name)
+        public Rock(string lyrics, string name, string type, string composed_by, int year_released)
         {
             this.Lyrics = lyrics;
             this.Name = name;
+            this.Type = type;
+            this.Composed_by = composed_by;
+            this.Year_Released = year_released;
         }
     }
 }

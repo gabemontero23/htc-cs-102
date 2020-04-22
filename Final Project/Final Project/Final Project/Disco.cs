@@ -7,21 +7,22 @@ using System.Windows;
 
 namespace Final_Project
 {
-    public class Country : Music
+    public class Disco : Music
     {
-        public string Name 
-        { 
+
+        public string Name
+        {
             get;
         }
 
         public override void Speak()
         {
-            MessageBox.Show("Yee haw!");
+            MessageBox.Show("Let's Boogie!");
         }
 
-        public Country() { }
+        public Disco() { }
 
-        public Country(string lyrics, string name, string type, string composed_by, int year_released)
+        public Disco(string lyrics, string name, string type, string composed_by, int year_released)
         {
             this.Lyrics = lyrics;
             this.Name = name;

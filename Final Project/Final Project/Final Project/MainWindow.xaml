@@ -10,13 +10,22 @@
         <ListView Name="lvSongs" Height="150px" Margin="0,0,0,10" MouseDoubleClick="lvSongs_MouseDoubleClick">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="150" Header="Name" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
+                    <GridViewColumn Width="150" Header="Song Name" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
                     <GridViewColumn Width="100" Header="Musical Genre" DisplayMemberBinding="{Binding Type}"></GridViewColumn>
-                    <GridViewColumn Width="100" Header="Composed by" DisplayMemberBinding="{Binding Composed_by}"></GridViewColumn>
-                    <GridViewColumn Width="100" Header="Year" DisplayMemberBinding="{Binding Year}"></GridViewColumn>
+                    <GridViewColumn Width="130" Header="Composed by" DisplayMemberBinding="{Binding Composed_by}"></GridViewColumn>
+                    <GridViewColumn Width="100" Header="Year Released" DisplayMemberBinding="{Binding Year_Released}"></GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
+        <TextBlock>Song Name</TextBlock>
+        <TextBox Name="SongInput" Margin="0,0,0,15"></TextBox>
+        <TextBlock>Musical Genre</TextBlock>
+        <TextBox Name="TypeInput" Margin="0,0,0,15"></TextBox>
+        <TextBlock>Composed By</TextBlock>
+        <TextBox Name="ComposerInput" Margin="0,0,0,15"></TextBox>
+        <TextBlock>Year Released</TextBlock>
+        <TextBox Name="YearInput" Margin="0,0,0,15"></TextBox>
+        <Button Click="AddButton_Click" HorizontalAlignment="Center" Margin="0,0,0,10">Add</Button>
         <Button Click="SayLyrics_Button_Click">Say Lyrics</Button>
     </StackPanel>
 </Window>

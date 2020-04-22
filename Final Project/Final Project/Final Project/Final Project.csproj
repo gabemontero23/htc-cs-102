@@ -56,8 +56,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Country.cs" />
+    <Compile Include="Disco.cs" />
     <Compile Include="Pop.cs" />
+    <Compile Include="Rap.cs" />
     <Compile Include="Rock.cs" />
+    <Compile Include="UserInput.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
