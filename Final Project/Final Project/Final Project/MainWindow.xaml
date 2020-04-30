@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Final_Project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="700">
+        Title="Spotify Playlist" Height="650" Width="700">
+
     <StackPanel>
         <ListView Name="lvSongs" Height="150px" Margin="0,0,0,10" MouseDoubleClick="lvSongs_MouseDoubleClick">
             <ListView.View>
@@ -17,15 +18,20 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        
+
         <TextBlock>Song Name</TextBlock>
-        <TextBox Name="SongInput" Margin="0,0,0,15"></TextBox>
+        <TextBox Name="songInput" Margin="0,0,0,15"></TextBox>
         <TextBlock>Musical Genre</TextBlock>
-        <TextBox Name="TypeInput" Margin="0,0,0,15"></TextBox>
+        <TextBox Name="typeInput" Margin="0,0,0,15"></TextBox>
         <TextBlock>Composed By</TextBlock>
-        <TextBox Name="ComposerInput" Margin="0,0,0,15"></TextBox>
+        <TextBox Name="composerInput" Margin="0,0,0,15"></TextBox>
         <TextBlock>Year Released</TextBlock>
-        <TextBox Name="YearInput" Margin="0,0,0,15"></TextBox>
+        <TextBox Name="yearInput" Margin="0,0,0,15"></TextBox>
+        <TextBlock>Lyrics</TextBlock>
+        <TextBox Name="lyricsInput" Margin="0,0,0,15"></TextBox>
         <Button Click="AddButton_Click" HorizontalAlignment="Center" Margin="0,0,0,10">Add</Button>
+        <Button Click="DeleteButton_Click" HorizontalAlignment="Center" Margin="0,0,0,10">Delete</Button>
         <Button Click="SayLyrics_Button_Click">Say Lyrics</Button>
     </StackPanel>
 </Window>

@@ -9,7 +9,13 @@ namespace Final_Project
 {
     public class Music
     {
+        internal object Remove;
 
+        public string Name
+        {
+            get;
+            set;
+        }
         public string Lyrics
         {
             get;
@@ -21,7 +27,7 @@ namespace Final_Project
             get;
             set;
         }
-        
+
         public string Composed_by
         {
             get;
@@ -34,15 +40,19 @@ namespace Final_Project
             set;
         }
 
-
         public void SayLyrics()
         {
             MessageBox.Show(Lyrics);
         }
 
-        public virtual void Speak()
+        public void ShowDetails()
         {
-            // Do nothing if the song is not specific
+            string infoString = "Song Name: " + this.Name;
+            infoString += "\nType: " + this.Type;
+            infoString += "\nComposed by: " + this.Composed_by;
+            infoString += "\nYear Released: " + this.Year_Released;
+            MessageBox.Show(infoString);
         }
+
     }
 }

@@ -57,10 +57,9 @@
     </ApplicationDefinition>
     <Compile Include="Country.cs" />
     <Compile Include="Disco.cs" />
-    <Compile Include="Pop.cs" />
     <Compile Include="Rap.cs" />
     <Compile Include="Rock.cs" />
-    <Compile Include="UserInput.cs" />
+    <Compile Include="userMusic.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -76,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Music.cs" />
+    <Compile Include="Pop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

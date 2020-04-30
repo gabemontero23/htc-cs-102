@@ -28,27 +28,29 @@ namespace Final_Project
             MusicList = new ObservableCollection<Music>();
 
             // Define some songs
-            Country country = new Country("Country roads, take me home, To the place, I belong, West Virginia, mountain mama, Take me home, country roads", "Country Roads", "Country", "John Denver", 1971);
-            Pop pop = new Pop("Huh, because I'm happy, Clap along if you feel like a room without a roof, Because I'm happy, Clap along if you feel like happiness is the truth", "Happy", "Pop", "Pharrell Williams", 2013);
-            Rock rock = new Rock("Is this the real life? Is this just fantasy ? Caught in a landslide, No escape from reality.", "Bohemian Rhapsody", "Rock", "Queen", 1975);
-            Rap rap = new Rap("His palms are sweaty, knees weak, arms are heavy, There's vomit on his sweater already, mom's spaghetti, He's nervous, but on the surface he looks calm and ready", "Lose Yourself", "Rap", "Eminem", 2002);
-            Disco disco = new Disco("Hey hey hey Ba de ya, say do you remember Ba de ya, dancing in September Ba de ya, never was a cloudy day","September", "Disco", "Earth, Wind & Fire", 1978);
+            Music pop = new Pop("Happy", "Pop", "Pharrell Williams", 2013, "Huh, because I'm happy Clap along if you feel like a room without a roof Because I'm happy Clap along if you feel like happiness is the truth");
+            Music rock = new Rock("Bohemian Rhapsody", "Rock", "Queen", 1975, "Country roads, take me home To the place I belong West Virginia, mountain mama Take me home, country roads");
+            Music country = new Country("Country Roads", "Country", "John Denver", 1971, "Country roads, take me home To the place I belong West Virginia, mountain mama Take me home, country roads");
+            Music rap = new Rap("Lose Yourself", "Rap", "Eminem", 2002, "Yo His palms are sweaty, knees weak, arms are heavy There's vomit on his sweater already, mom's spaghetti He's nervous, but on the surface he looks calm and ready To drop bombs, but he keeps on forgettin'");
+            Music disco = new Disco("September", "Disco", "Earth, Wind & Fire", 1978, "Hey hey hey Ba de ya, say do you remember Ba de ya, dancing in September Ba de ya, never was a cloudy day");
+
             // Add the songs to the list
-            MusicList.Add(country);
             MusicList.Add(pop);
             MusicList.Add(rock);
+            MusicList.Add(country);
             MusicList.Add(rap);
             MusicList.Add(disco);
-
             lvSongs.ItemsSource = MusicList;
+
         }
+
 
         private void lvSongs_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Music selectedSong = lvSongs.SelectedItem as Music;
             if (selectedSong != null)
             {
-                selectedSong.Speak();
+                selectedSong.ShowDetails();
             }
         }
 
@@ -62,7 +64,35 @@ namespace Final_Project
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
+            Music musicToAdd = new userMusic(songInput.Text, typeInput.Text, composerInput.Text, int.Parse(yearInput.Text), lyricsInput.Text);
 
+            MusicList.Add(musicToAdd);
+
+            songInput.Clear();
+            typeInput.Clear();
+            composerInput.Clear();
+            yearInput.Clear();
+            lyricsInput.Clear();
+        }
+
+        private void ShowButton_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Music m in MusicList)
+            {
+                m.ShowDetails();
+            }
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            Music musicToAdd = new userMusic(songInput.Text, typeInput.Text, composerInput.Text, int.Parse(yearInput.Text), lyricsInput.Text);
+            MusicList.Remove(musicToAdd);
+
+            songInput.Clear();
+            typeInput.Clear();
+            composerInput.Clear();
+            yearInput.Clear();
+            lyricsInput.Clear();
         }
     }
 }
